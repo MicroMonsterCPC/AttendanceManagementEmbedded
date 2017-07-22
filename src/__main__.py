@@ -1,6 +1,10 @@
 from ReadPasori import ReadPasori 
 from PostJson import PostJson
-if __name__ == '__main__':
-  idm = ReadPasori.read_idm()
-  print PostJson.create(idm)
+from PlaySound import PlaySound
 
+if __name__ == '__main__':
+  print "Waiting..."
+  idm = ReadPasori.read_idm()
+  print idm
+  status = PostJson.create(idm)['status']
+  print status
