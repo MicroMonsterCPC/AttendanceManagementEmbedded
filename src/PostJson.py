@@ -1,6 +1,6 @@
 import json
 import urllib2
-import time
+import datetime 
 import config
 
 class PostJson(object):
@@ -23,7 +23,7 @@ class PostJson(object):
   @staticmethod
   def create(idm):
     url = config.settings['url'] + '/protect/attendances/create'
-    obj = { 'idm': idm, 'datetime': time.time() }
+    obj = { 'idm': idm, 'datetime': str(datetime.datetime.today()) }
     return PostJson.__post(url, obj)
 
   @staticmethod
