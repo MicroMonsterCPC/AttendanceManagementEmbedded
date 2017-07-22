@@ -1,11 +1,13 @@
 import json
 import urllib2
 from time import time
+from os import environ
 
-url = raw_input('Target URL: ')
+print environ.get('AttendanceManagementTargetUrl')
+url = environ.get('AttendanceManagementTargetUrl') + '/attendances/create'
 method = 'POST'
-username = raw_input('Username: ')
-password = raw_input('Password: ')
+username = environ.get('AttendanceManagementBasicUsername')
+password = environ.get('AttendanceManagementBasicPassword')
 headers = {
   'Content-Type': 'application/json',
   'authorization': 'Basic ' + (username + ':' + password).encode('base64')[:-1]

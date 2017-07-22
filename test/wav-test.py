@@ -32,4 +32,14 @@ def cancel():
 def error():
   play('../sound/error.wav')
 
+from time import sleep
 enter()
+sleep(0.5)
+left()
+sleep(0.5)
+touch()
+sleep(0.5)
+cancel()
+sleep(0.5)
+error()
+
